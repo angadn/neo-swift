@@ -7,9 +7,9 @@
 //
 
 import Foundation
-var __neo__: [String: AnyObject] = [:]
+var __neo__: [String: Any] = [:]
 
-func Neo<T: AnyObject>(obj: T, tag: String) -> T {
+func Neo<T: Any>(obj: T, tag: String) -> T {
     if let ret = __neo__[tag] {
         return ret as! T
     }
@@ -18,6 +18,6 @@ func Neo<T: AnyObject>(obj: T, tag: String) -> T {
     return obj
 }
 
-func Neo<T: AnyObject>(obj: T) -> T {
+func Neo<T: Any>(obj: T) -> T {
     return Neo(obj, tag: String(obj.dynamicType))
 }
